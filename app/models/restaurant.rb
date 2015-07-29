@@ -18,4 +18,7 @@ class Restaurant < ActiveRecord::Base
   validates :address, presence: true
   validates :phone, presence: true
   validates :website, presence: true
+
+  # Uploader
+  mount_uploader :image, ImageUploader
 end

@@ -16,6 +16,11 @@ gem 'annotate', '~> 2.6.6'
 gem 'haml'
 gem "haml-rails", "~> 0.9"
 
+gem "carrierwave"
+gem "fog"
+
+gem "figaro"
+
 group :production do
   gem "rails_12factor"
   gem "pg"
@@ -28,17 +33,11 @@ end
 
 group :development, :test do
   gem 'byebug'
-
   gem 'web-console', '~> 2.0'
-
   gem 'spring'
-
   gem 'rspec-rails', '~> 3.0'
-
   gem 'pry-rails'
-
   gem 'factory_girl_rails'
-
   gem 'faker'
 end
 
