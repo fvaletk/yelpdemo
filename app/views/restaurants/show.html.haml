@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @restaurant.name
+%p
+  %b Address:
+  = @restaurant.address
+%p
+  %b Phone:
+  = @restaurant.phone
+%p
+  %b Website:
+  = @restaurant.website
+
+= link_to 'Edit', edit_restaurant_path(@restaurant)
+\|
+= link_to 'Back', restaurants_path
