@@ -1,6 +1,5 @@
 module DeviseHelper
   def devise_error_messages!
-    Rails.logger.info "a"*100
     return '' if resource.errors.empty?
 
     messages = resource.errors.full_messages.map { |msg| content_tag(:li, msg) }.join
