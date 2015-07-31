@@ -22,6 +22,8 @@ gem "fog"
 
 gem "figaro"
 
+gem "devise"
+
 group :production do
   gem "rails_12factor"
   gem "pg"
