@@ -1,5 +1,3 @@
-%p#notice= notice
-
 = image_tag @restaurant.image_url
 
 %p
@@ -13,7 +11,7 @@
   = @restaurant.phone
 %p
   %b Website:
-  = @restaurant.website
+  = link_to @restaurant.website
 
 = link_to 'Edit', edit_restaurant_path(@restaurant), class: 'btn btn-link'
 \|
