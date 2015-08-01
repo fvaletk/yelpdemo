@@ -21,9 +21,19 @@
       %h3= "No reviews yet. Be the first to write one!"
     -else
       - @reviews.each do |review|
-        %p= review.rating
+        .start-rating{ 'data-score' => review.rating }
         %p= review.comment
 
 = link_to 'Edit', edit_restaurant_path(@restaurant), class: 'btn btn-link'
 \|
 = link_to 'Back', restaurants_path, class: 'btn btn-link'
+
+
+:javascript
+  $('.start-rating').raty({
+    path: 'https://s3.amazonaws.com/yelpdemotutorial/stars',
+    readOnly: true,
+    score: function(){
+      return $(this).attr('data-score');
+    }
+  });
