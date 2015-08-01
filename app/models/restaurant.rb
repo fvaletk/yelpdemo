@@ -21,4 +21,7 @@ class Restaurant < ActiveRecord::Base
 
   # Uploader
   mount_uploader :image, ImageUploader
+
+  # Associations
+  has_many :reviews
 end
