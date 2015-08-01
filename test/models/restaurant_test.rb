@@ -9,6 +9,7 @@
 #  website    :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  image      :string
 #
 
 require 'test_helper'

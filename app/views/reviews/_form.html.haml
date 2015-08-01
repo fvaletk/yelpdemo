@@ -1,7 +1,10 @@
 = form_for ([@restaurant, @review]) do |f|
   - if @review.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@review.errors.count, "error")} prohibited this review from being saved:"
+    #error_explanation.alert.alert-danger.alert-dismissable
+      %button.close{ "type" => "button", "data-dismiss" => "alert" }
+        %span{ "aria-hidden" => "true" }= "&times;"
+        %span.sr-only= "Close"
+      %h4= "#{pluralize(@review.errors.count, "error")} prohibited this review from being saved:"
       %ul
         - @review.errors.full_messages.each do |msg|
           %li= msg

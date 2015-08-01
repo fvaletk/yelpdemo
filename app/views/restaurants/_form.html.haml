@@ -1,23 +1,26 @@
 = form_for @restaurant, :html => { multipart: true } do |f|
   - if @restaurant.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@restaurant.errors.count, "error")} prohibited this restaurant from being saved:"
+    #error_explanation.alert.alert-danger.alert-dismissable
+      %button.close{ "type" => "button", "data-dismiss" => "alert" }
+        %span{ "aria-hidden" => "true" }= "&times;"
+        %span.sr-only= "Close"
+      %h4= "#{pluralize(@restaurant.errors.count, "error")} prohibited this restaurant from being saved:"
       %ul
         - @restaurant.errors.full_messages.each do |msg|
           %li= msg
 
   .form-group
     = f.label :name
-    = f.text_field :name, class: "form-control"
+    = f.text_field :name, class: "form-control", placeholder: "Paner Bread"
   .form-group
     = f.label :address
-    = f.text_field :address, class: "form-control"
+    = f.text_field :address, class: "form-control", placeholder: "201 Brooklin Avenue, Boston, MA 02215"
   .form-group
     = f.label :phone
-    = f.text_field :phone, class: "form-control"
+    = f.text_field :phone, class: "form-control", placeholder: "(617) 247-0174"
   .form-group
     = f.label :website
-    = f.text_field :website, class: "form-control"
+    = f.text_field :website, class: "form-control", placeholder: "http://www.panerabread.com/"
   .form-group
     = f.label :image
     = f.file_field :image, class: "form-control"
